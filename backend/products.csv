@@ -2,4 +2,10 @@ id,name,description,price,department,image,brand,rating,stock,color,features
 1,Sample Product 1,Description for product 1,19.99,Electronics,https://images.unsplash.com/photo-1517336714731-489689fd1ca8,Sony,4.5,12,Black,"Bluetooth, Noise Cancelling"
 2,Sample Product 2,Description for product 2,29.99,Books,https://images.unsplash.com/photo-1506744038136-46273834b3fb,Penguin,4.8,50,Blue,"Hardcover, Bestseller"
 3,Sample Product 3,Description for product 3,9.99,Toys,https://images.unsplash.com/photo-1506744038136-46273834b3fb,LEGO,4.7,30,Multi,"Educational, Creative"
-add 
+4,Sample Product 4,Description for product 4,49.99,Electronics,https://images.unsplash.com/photo-1519125323398-675f0ddb6308,Apple,4.9,8,White,"Wireless, Touchscreen"
+5,Sample Product 5,Description for product 5,15.99,Books,https://images.unsplash.com/photo-1465101046530-73398c7f28ca,HarperCollins,4.2,100,Green,"Paperback, Award Winner"
+6,Sample Product 6,Description for product 6,24.99,Toys,https://images.unsplash.com/photo-1511988617509-a57c8a288659,Mattel,4.3,25,Red,"Battery Operated, Remote Control"
+7,Sample Product 7,Description for product 7,99.99,Electronics,https://images.unsplash.com/photo-1512446733611-9099a758e0c2,Samsung,4.6,5,Silver,"Smart, 4K Display"
+8,Sample Product 8,Description for product 8,12.99,Books,https://images.unsplash.com/photo-1512820790803-83ca734da794,Random House,4.1,60,Yellow,"Children's Book, Illustrated"
+9,Sample Product 9,Description for product 9,34.99,Toys,https://images.unsplash.com/photo-1502086223501-7ea6ecd79368,Fisher-Price,4.4,40,Blue,"Educational, Musical"
+10,Sample Product 10,Description for product 10,59.99,Electronics,https://images.unsplash.com/photo-1519125323398-675f0ddb6308,Bose,4.8,10,Black,"Bluetooth, Noise Cancelling"

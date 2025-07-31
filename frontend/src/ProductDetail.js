@@ -11,6 +11,10 @@ function ProductDetail() {
     fetch(`http://localhost:3001/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
+        // Use department_name if present (from backend join), else fallback to department lookup
+        if (data.department_name) {
+          data.department = data.department_name;
+        }
         setProduct(data);
         setLoading(false);
       });
@@ -37,27 +41,34 @@ function ProductDetail() {
         borderRadius: "16px",
         padding: "32px 24px",
         background: "#fff",
+        maxWidth: "600px",
+        margin: "40px auto",
       }}
     >
       <div
-        style={{ display: "flex", alignItems: "center", marginBottom: "24px" }}
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          marginBottom: "24px",
+        }}
       >
-        <div style={{ flex: "0 0 120px", marginRight: "32px" }}>
+        <div style={{ flex: "0 0 140px", marginRight: "32px" }}>
           <img
             src={
               product.image
                 ? product.image
-                : `https://placehold.co/120x120?text=${encodeURIComponent(
+                : `https://placehold.co/140x140?text=${encodeURIComponent(
                     product.name.charAt(0)
                   )}`
             }
             alt={product.name}
             style={{
-              width: "120px",
-              height: "120px",
+              width: "140px",
+              height: "140px",
               objectFit: "cover",
-              borderRadius: "12px",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              borderRadius: "16px",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
+              background: "#f1f5f9",
             }}
           />
         </div>
@@ -65,10 +76,10 @@ function ProductDetail() {
           <div
             className="product-detail-title"
             style={{
-              fontSize: "2.2rem",
+              fontSize: "2.4rem",
               fontWeight: 700,
               color: "#2d3748",
-              marginBottom: "8px",
+              marginBottom: "10px",
             }}
           >
             {product.name}
@@ -76,83 +87,105 @@ function ProductDetail() {
           <div
             className="product-detail-meta"
             style={{
-              fontSize: "1.1rem",
+              fontSize: "1.15rem",
               color: "#64748b",
-              marginBottom: "4px",
+              marginBottom: "6px",
             }}
           >
-            Department: {product.department}
-          </div>
-          <div
-            className="product-detail-meta"
-            style={{ fontSize: "1.1rem", color: "#475569", fontWeight: 500 }}
-          >
-            Price: ${product.price}
+            <span style={{ fontWeight: 500 }}>Department:</span>{" "}
+            <span style={{ color: "#2563eb" }}>{product.department}</span>
           </div>
           <div
             className="product-detail-meta"
             style={{
-              fontSize: "1.1rem",
+              fontSize: "1.15rem",
               color: "#475569",
-              marginBottom: "4px",
+              fontWeight: 600,
+              marginBottom: "6px",
             }}
           >
-            Brand: {product.brand}
+            Price: <span style={{ color: "#059669" }}>${product.price}</span>
           </div>
           <div
             className="product-detail-meta"
             style={{
-              fontSize: "1.1rem",
+              fontSize: "1.15rem",
               color: "#475569",
-              marginBottom: "4px",
+              marginBottom: "6px",
             }}
           >
-            Rating: {product.rating} ⭐
+            Brand: <span style={{ color: "#2563eb" }}>{product.brand}</span>
           </div>
           <div
             className="product-detail-meta"
             style={{
-              fontSize: "1.1rem",
+              fontSize: "1.15rem",
               color: "#475569",
-              marginBottom: "4px",
+              marginBottom: "6px",
             }}
           >
-            Stock: {product.stock}
+            Rating:{" "}
+            <span style={{ color: "#f59e42", fontWeight: 600 }}>
+              {product.rating}{" "}
+              <span style={{ color: "#fbbf24", fontSize: "1.2rem" }}>★</span>
+            </span>
           </div>
           <div
             className="product-detail-meta"
             style={{
-              fontSize: "1.1rem",
+              fontSize: "1.15rem",
               color: "#475569",
-              marginBottom: "4px",
+              marginBottom: "6px",
             }}
           >
-            Color: {product.color}
+            Stock: <span style={{ color: "#059669" }}>{product.stock}</span>
           </div>
           <div
             className="product-detail-meta"
             style={{
-              fontSize: "1.1rem",
+              fontSize: "1.15rem",
               color: "#475569",
-              marginBottom: "4px",
+              marginBottom: "6px",
             }}
           >
-            Features: {product.features}
+            Color: <span style={{ color: "#2563eb" }}>{product.color}</span>
+          </div>
+          <div
+            className="product-detail-meta"
+            style={{
+              fontSize: "1.15rem",
+              color: "#475569",
+              marginBottom: "6px",
+            }}
+          >
+            Features:{" "}
+            <span style={{ color: "#64748b" }}>{product.features}</span>
           </div>
         </div>
       </div>
       <div
         className="product-detail-desc"
         style={{
-          fontSize: "1.15rem",
+          fontSize: "1.18rem",
           color: "#475569",
-          marginBottom: "18px",
-          lineHeight: 1.6,
+          marginBottom: "24px",
+          lineHeight: 1.7,
+          background: "#f8fafc",
+          borderRadius: "8px",
+          padding: "16px",
         }}
       >
         {product.description}
       </div>
-      <Link className="back-link" to="/">
+      <Link
+        className="back-link"
+        to="/"
+        style={{
+          color: "#2563eb",
+          fontWeight: 500,
+          fontSize: "1.1rem",
+        }}
+      >
         &#8592; Back to Product List
       </Link>
     </div>

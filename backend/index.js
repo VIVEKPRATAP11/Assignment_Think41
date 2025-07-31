@@ -15,10 +15,17 @@ initDB(() => {
     res.send("Backend is running and database is initialized!");
   });
 
-  // GET /products - return all products
+  // GET /products - return all products or filter by department_id
   app.get("/products", (req, res) => {
     console.log("GET /products called");
-    db.all("SELECT * FROM products", [], (err, rows) => {
+    const departmentId = req.query.department_id;
+    let query = `SELECT products.*, departments.name AS department_name FROM products LEFT JOIN departments ON products.department_id = departments.id`;
+    let params = [];
+    if (departmentId) {
+      query += " WHERE products.department_id = ?";
+      params.push(departmentId);
+    }
+    db.all(query, params, (err, rows) => {
       if (err) {
         console.error("DB error:", err.message);
         return res.status(500).json({ error: err.message });
