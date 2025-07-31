@@ -3,7 +3,7 @@ const fs = require("fs");
 const csv = require("csv-parser");
 
 const DB_FILE = "products.db";
-const CSV_FILE = "products.csv";
+const CSV_FILE = "products_detailed.csv";
 
 // Initialize SQLite database
 const db = new sqlite3.Database(DB_FILE);

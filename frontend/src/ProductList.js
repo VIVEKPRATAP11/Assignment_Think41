@@ -107,7 +107,9 @@ function ProductList() {
               alignItems: "flex-start",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
+            <div
+              style={{ display: "flex", alignItems: "center", width: "100%" }}
+            >
               <Link
                 className="product-link"
                 to={`/products/${product.id}`}
@@ -134,8 +136,15 @@ function ProductList() {
               </span>
             </div>
             {product.department_name && (
-              <div style={{ marginTop: "8px", color: "#334155", fontSize: "1.05rem" }}>
-                <span style={{ fontWeight: 500 }}>Department:</span> {product.department_name}
+              <div
+                style={{
+                  marginTop: "8px",
+                  color: "#334155",
+                  fontSize: "1.05rem",
+                }}
+              >
+                <span style={{ fontWeight: 500 }}>Department:</span>{" "}
+                {product.department_name}
               </div>
             )}
           </li>
