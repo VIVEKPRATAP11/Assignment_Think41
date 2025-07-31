@@ -1,4 +1,5 @@
-id,name,description,price,department
-1,Sample Product 1,Description for product 1,19.99,Electronics
-2,Sample Product 2,Description for product 2,29.99,Books
-3,Sample Product 3,Description for product 3,9.99,Toys
+id,name,description,price,department,image,brand,rating,stock,color,features
+1,Sample Product 1,Description for product 1,19.99,Electronics,https://images.unsplash.com/photo-1517336714731-489689fd1ca8,Sony,4.5,12,Black,"Bluetooth, Noise Cancelling"
+2,Sample Product 2,Description for product 2,29.99,Books,https://images.unsplash.com/photo-1506744038136-46273834b3fb,Penguin,4.8,50,Blue,"Hardcover, Bestseller"
+3,Sample Product 3,Description for product 3,9.99,Toys,https://images.unsplash.com/photo-1506744038136-46273834b3fb,LEGO,4.7,30,Multi,"Educational, Creative"
+add 
